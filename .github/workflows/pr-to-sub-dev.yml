@@ -1,0 +1,18 @@
+name: Pull Request to sub develop branch
+on:
+  workflow_dispatch:
+  push:
+    branchs: [ develop ]
+
+jobs:
+  pr:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        commit-message: "testes"
+        committer: goro9 <sokenbiccha@icloud.com>
+        base: sub/develop
