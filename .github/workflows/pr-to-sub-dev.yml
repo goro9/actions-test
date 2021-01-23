@@ -2,7 +2,7 @@ name: Pull Request to sub develop branch
 on:
   workflow_dispatch:
   push:
-    branchs: [ develop ]
+    branches: [ develop ]
 
 jobs:
   pr:
@@ -11,6 +11,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Create Pull Request
+      id: cpr
       uses: peter-evans/create-pull-request@v3
       with:
         commit-message: "testes"
