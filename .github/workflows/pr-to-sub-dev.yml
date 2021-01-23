@@ -13,7 +13,3 @@ jobs:
     - name: Create Pull Request
       id: cpr
       uses: peter-evans/create-pull-request@v3
-      with:
-        commit-message: "testes"
-        committer: goro9 <sokenbiccha@icloud.com>
-        base: sub/develop
