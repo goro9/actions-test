@@ -15,4 +15,6 @@ jobs:
         fetch-depth: 0
     - name: Create Pull Request
       run: |
-        gh pr create --base sub/develop
+        echo ${{ secrets.TEST_TOKEN }} | gh auth login --hostname github.com --with-token
+        gh auth status
+        gh pr create --title "test title" --body "test body" --base sub/develop
